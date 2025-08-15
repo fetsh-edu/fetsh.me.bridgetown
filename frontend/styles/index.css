@@ -1,0 +1,293 @@
+/* ===== Source Serif 4 — Roman variable ===== */
+@font-face {
+    font-family: "Source Serif 4";
+    src: url("/fonts/source-serif-4/source-serif4-var-roman-latin.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 300 800;
+    font-display: swap;
+    font-stretch: 100%;
+    unicode-range:
+        U+0000-00FF, U+0100-024F, U+0259, U+1E00-1EFF, U+2000-206F, U+20A0-20CF,
+        U+2122;
+}
+
+@font-face {
+    font-family: "Source Serif 4";
+    src: url("/fonts/source-serif-4/source-serif4-var-roman-cyrillic.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 300 800;
+    font-display: swap;
+    font-stretch: 100%;
+    unicode-range:
+        U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F, U+2000-206F, U+20B4;
+}
+
+/* ===== Source Serif 4 — Italic variable ===== */
+@font-face {
+    font-family: "Source Serif 4";
+    src: url("/fonts/source-serif-4/source-serif4-var-italic-latin.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 300 800;
+    font-display: swap;
+    font-stretch: 100%;
+    unicode-range:
+        U+0000-00FF, U+0100-024F, U+0259, U+1E00-1EFF, U+2000-206F, U+20A0-20CF,
+        U+2122;
+}
+
+@font-face {
+    font-family: "Source Serif 4";
+    src: url("/fonts/source-serif-4/source-serif4-var-italic-cyrillic.woff2")
+        format("woff2");
+    font-style: italic;
+    font-weight: 300 800;
+    font-display: swap;
+    font-stretch: 100%;
+    unicode-range:
+        U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F, U+2000-206F, U+20B4;
+}
+
+/* Hebrew subset — грузится только для U+0590–05FF и т.п. */
+@font-face {
+    font-family: "Source Serif 4";
+    src: url("/fonts/noto-serif-hebrew/noto-serif-hebrew-var-he.woff2")
+        format("woff2");
+    font-style: normal;
+    font-weight: 300 800; /* или 400 700, если ограничили ось */
+    font-stretch: 100%;
+    font-display: swap;
+    unicode-range: U+0590-05FF, U+200C-200F, U+202A-202E, U+2066-2069, U+20AA;
+}
+/* ===== Rubik — Roman ===== */
+@font-face {
+    font-family: "Rubik";
+    src: url("/fonts/rubik/rubik-var-roman-latin.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 300 900; /* фактический диапазон Rubik */
+    font-stretch: 100%;
+    font-display: swap;
+    unicode-range:
+        U+0000-00FF, U+0100-024F, U+0259, U+1E00-1EFF, U+2000-206F, U+20A0-20CF,
+        U+2122;
+}
+@font-face {
+    font-family: "Rubik";
+    src: url("/fonts/rubik/rubik-var-roman-cyrillic.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 300 900;
+    font-stretch: 100%;
+    font-display: swap;
+    unicode-range:
+        U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F, U+2000-206F, U+20B4;
+}
+
+/* ===== Rubik — Italic (если используете курсив в UI/заголовках) ===== */
+@font-face {
+    font-family: "Rubik";
+    src: url("/fonts/rubik/rubik-var-italic-latin.woff2") format("woff2");
+    font-style: italic;
+    font-weight: 300 900;
+    font-stretch: 100%;
+    font-display: swap;
+    unicode-range:
+        U+0000-00FF, U+0100-024F, U+0259, U+1E00-1EFF, U+2000-206F, U+20A0-20CF,
+        U+2122;
+}
+@font-face {
+    font-family: "Rubik";
+    src: url("/fonts/rubik/rubik-var-italic-cyrillic.woff2") format("woff2");
+    font-style: italic;
+    font-weight: 300 900;
+    font-stretch: 100%;
+    font-display: swap;
+    unicode-range:
+        U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F, U+2000-206F, U+20B4;
+}
+@font-face {
+    font-family: "Rubik";
+    src: url("/fonts/rubik/rubik-var-roman-hebrew.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 300 900;
+    font-stretch: 100%;
+    font-display: swap;
+    unicode-range: U+0590-05FF, U+200C-200F, U+202A-202E, U+2066-2069, U+20AA;
+}
+
+:root {
+    --sans-serif:
+        "Rubik", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    --secondary-font: var(--sans-serif);
+    --serif:
+        "Source Serif 4", "Charter", "Georgia", "Palatino", "Palatino Linotype",
+        "Book Antiqua", "Minion Pro", "Iowan Old Style", "Sitka Text", serif;
+    --primary-font: var(--serif);
+    --base-font-size: 16px;
+    --secondary-font-adjust: 0.52;
+    --background: #fffff8;
+    --background-10: #f0f0ea;
+    --background-20: #e7e6de;
+    --primary: #211618;
+    --primary-10: #666666;
+    --primary-20: #aaaaaa;
+    --primary-25: #cccccc;
+    --primary-30: #dddddd;
+    --primary-40: #eeeeee;
+    --accent-red: #ed355d;
+    --accent-yellow: #ffe922;
+    --accent-green: #5e8d58;
+    --accent: var(--accent-red);
+    --ear: 1.6rem;
+    --main-content-width: 41rem;
+    --main-content-width-unbounded: 100%;
+}
+:lang(he) {
+    font-family: var(--serif);
+    direction: rtl;
+    unicode-bidi: isolate; /* защищает от “протекания” направления в смешанных участках */
+}
+
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+    font-size: var(--base-font-size);
+}
+body {
+    font-family: var(--primary-font);
+    font-optical-sizing: auto;
+    color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+    margin: 0px;
+    padding: 0px;
+    background-color: var(--background);
+    text-rendering: optimizeSpeed;
+    line-height: 1.6;
+}
+main {
+    flex: 1;
+}
+/*article {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    overflow-wrap: anywhere;
+    word-break: normal;
+}*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--secondary-font);
+    font-size-adjust: var(--secondary-font-adjust);
+    line-height: 1.15;
+    text-rendering: optimizeLegibility;
+    text-align: start;
+    text-wrap: balance;
+    font-weight: 500;
+}
+.nav,
+.ui,
+code,
+pre,
+kbd,
+samp,
+table,
+caption,
+figcaption {
+    text-align: start;
+    hyphens: manual;
+    -webkit-hyphens: manual;
+}
+header {
+    padding: 0.5rem var(--ear);
+    & h1 {
+        font-weight: 300;
+        font-size: 1.6rem;
+        & a {
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            & img {
+                width: 3rem;
+                margin-right: 1rem;
+            }
+        }
+        & i {
+            color: var(--accent);
+            font-style: normal;
+            padding: 0 0.4rem;
+        }
+    }
+}
+main {
+    padding: 0.5rem var(--ear);
+    & h1 {
+        font-weight: 500;
+        font-size: 2.4rem;
+        /*letter-spacing: -0.03em;*/
+    }
+    & p {
+        font-size: 1.15rem;
+        line-height: 1.5;
+        font-weight: 400;
+        & img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    & figure {
+        margin: 0;
+        & img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+article address,
+article blockquote,
+article div,
+article dl,
+article fieldset,
+article figure,
+article figcaption,
+article footer,
+article form,
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6,
+article header,
+article hgroup,
+article hr,
+article main,
+article nav,
+article ol,
+article p,
+article pre,
+article section,
+article table,
+article ul {
+    max-width: var(--main-content-width);
+    margin-inline: auto;
+}
+article figure.unbounded,
+article img.unbounded {
+    max-width: fit-content;
+}
+article figure.wide,
+article img.wide {
+    max-width: calc(var(--main-content-width) + 200px);
+}

@@ -1,0 +1,207 @@
+<style>
+  :root {
+    /* Размеры ближе к 100vmin */
+    --blob-size-1: 175vmin;
+    --blob-size-2: 85vmin;
+    --blob-size-3: 170vmin;
+    --blob-opacity-1: 0.1;
+    --blob-opacity-2: 0.1;
+    --blob-opacity-3: 0.1;
+  }
+
+  .bg-blobs {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .blob {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--size, 100vmin);
+    height: var(--size, 100vmin);
+    /* blur уменьшен для FPS, мягкость из градиента */
+    filter: blur(12px);
+    /*opacity: 0.9;*/
+    mix-blend-mode: screen;
+    will-change: transform, border-radius, filter;
+    transition: border-radius 0.8s linear;
+    border-radius: 50%;
+    contain: layout paint;
+  }
+
+  /* Мягкие градиенты с прозрачным краем */
+  .blob--a {
+    --size: var(--blob-size-1);
+    background: radial-gradient(circle at 50% 50%,
+      var(--accent-red) 0%,
+      color-mix(in srgb, var(--accent-red) 50%, transparent) 40%,
+      color-mix(in srgb, var(--accent-red) 10%, transparent) 70%,
+      transparent 100%
+    );
+    opacity: var(--blob-opacity-1);
+  }
+
+  .blob--b {
+    --size: var(--blob-size-2);
+    background: radial-gradient(circle at 50% 50%,
+      var(--accent-yellow) 0%,
+      color-mix(in srgb, var(--accent-yellow) 50%, transparent) 40%,
+      color-mix(in srgb, var(--accent-yellow) 10%, transparent) 70%,
+      transparent 100%
+    );
+    opacity: var(--blob-opacity-2);
+  }
+
+  .blob--c {
+    --size: var(--blob-size-3);
+    background: radial-gradient(circle at 50% 55%,
+      var(--accent-green) 0%,
+      color-mix(in srgb, var(--accent-green) 50%, transparent) 40%,
+      color-mix(in srgb, var(--accent-green) 10%, transparent) 70%,
+      transparent 100%
+    );
+    opacity: var(--blob-opacity-3);
+  }
+</style>
+
+<div class="bg-blobs" id="bg-blobs">
+  <div class="blob blob--a"></div>
+  <div class="blob blob--b"></div>
+  <div class="blob blob--c"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ModifiersPlugin.min.js"></script>
+<script>
+  gsap.registerPlugin(ModifiersPlugin);
+
+  const blobs = gsap.utils.toArray(".blob");
+  const vw = () => window.innerWidth;
+  const vh = () => window.innerHeight;
+
+  const VISIBLE_FRACTION = 0.25;
+
+  const MOVE_DUR_MIN   = 15;
+  const MOVE_DUR_MAX   = 25;
+
+  const SCALE_DUR_MIN  = 18;
+  const SCALE_DUR_MAX  = 28;
+
+  const MORPH_DUR_MIN  = 12;
+  const MORPH_DUR_MAX  = 20;
+
+  /* Новые границы масштабирования */
+  const SCALE_MIN = 1;
+  const SCALE_MAX = 1.3;
+
+  const BLUR_MARGIN = 24; // blur(12px) ≈ 24px spread
+
+  const S = new WeakMap();
+
+  function randomBlobRadius() {
+    const r = () => gsap.utils.random(35, 70, 1);
+    const tl = r(), tr = r(), br = r(), bl = r();
+    const tly = r(), try_ = r(), bry = r(), bly = r();
+    return `${tl}% ${tr}% ${br}% ${bl}% / ${tly}% ${try_}% ${bry}% ${bly}%`;
+  }
+
+  function readBaseSizePx(el) {
+    const rect = el.getBoundingClientRect();
+    return Math.max(rect.width, rect.height);
+  }
+
+  function effectiveSize(el) {
+    const st = S.get(el);
+    return st.basePx * st.scale + BLUR_MARGIN;
+  }
+
+  function clampX(x, el) {
+    const size = effectiveSize(el);
+    const margin = size * VISIBLE_FRACTION;
+    const min = -size + margin;
+    const max = vw() - margin;
+    return gsap.utils.clamp(min, max, x);
+  }
+
+  function clampY(y, el) {
+    const size = effectiveSize(el);
+    const margin = size * VISIBLE_FRACTION;
+    const min = -size + margin;
+    const max = vh() - margin;
+    return gsap.utils.clamp(min, max, y);
+  }
+
+  function randomOnscreenPosition(el) {
+    const size = effectiveSize(el);
+    const margin = size * VISIBLE_FRACTION;
+    const minX = -size + margin;
+    const maxX = vw() - margin;
+    const minY = -size + margin;
+    const maxY = vh() - margin;
+    return { x: gsap.utils.random(minX, maxX), y: gsap.utils.random(minY, maxY) };
+  }
+
+  function startBlob(el, i = 0) {
+    const basePx = readBaseSizePx(el);
+    S.set(el, { basePx, scale: 1 });
+
+    const p0 = randomOnscreenPosition(el);
+    gsap.set(el, { x: p0.x, y: p0.y, scale: 1, transformOrigin: "50% 50%" });
+
+    const moveTl = gsap.timeline({
+      repeat: -1,
+      repeatRefresh: true,
+      defaults: { ease: "sine.inOut" },
+      delay: i * 0.6
+    }).to(el, {
+      duration: () => gsap.utils.random(MOVE_DUR_MIN, MOVE_DUR_MAX),
+      x: () => randomOnscreenPosition(el).x,
+      y: () => randomOnscreenPosition(el).y,
+      modifiers: {
+        x: v => clampX(parseFloat(v), el) + "px",
+        y: v => clampY(parseFloat(v), el) + "px",
+      }
+    }, 0);
+
+    const scaleTl = gsap.timeline({ repeat: -1, yoyo: true, delay: i * 0.6 })
+      .to(el, {
+        duration: gsap.utils.random(SCALE_DUR_MIN, SCALE_DUR_MAX),
+        scale: SCALE_MAX,
+        ease: "sine.inOut",
+        onUpdate: () => { S.get(el).scale = gsap.getProperty(el, "scale"); }
+      })
+      .to(el, {
+        duration: gsap.utils.random(SCALE_DUR_MIN, SCALE_DUR_MAX),
+        scale: SCALE_MIN,
+        ease: "sine.inOut",
+        onUpdate: () => { S.get(el).scale = gsap.getProperty(el, "scale"); }
+      });
+
+    const morphTl = gsap.timeline({ repeat: -1, delay: i * 0.8 })
+      .to(el, { duration: () => gsap.utils.random(MORPH_DUR_MIN, MORPH_DUR_MAX), borderRadius: () => randomBlobRadius(), ease: "sine.inOut" })
+      .to(el, { duration: () => gsap.utils.random(MORPH_DUR_MIN, MORPH_DUR_MAX), borderRadius: () => randomBlobRadius(), ease: "sine.inOut" }, "+=0.2");
+
+    S.set(el, { basePx, scale: 1, moveTl, morphTl, scaleTl });
+  }
+
+  blobs.forEach(startBlob);
+
+  let rid;
+  window.addEventListener("resize", () => {
+    clearTimeout(rid);
+    rid = setTimeout(() => {
+      blobs.forEach(el => {
+        const st = S.get(el);
+        st.basePx = readBaseSizePx(el);
+        const x = clampX(parseFloat(gsap.getProperty(el, "x")), el);
+        const y = clampY(parseFloat(gsap.getProperty(el, "y")), el);
+        gsap.to(el, { duration: 0.6, x, y, ease: "sine.out" });
+      });
+    }, 120);
+  }, { passive: true });
+</script>

@@ -1,0 +1,5 @@
+{%- if preset and preset != "" -%}
+  {% picture {{ preset }} "{{ path }}" {{ options }} %}
+{%- else -%}
+  {% picture "{{ path }}" {{ options }} %}
+{%- endif -%}

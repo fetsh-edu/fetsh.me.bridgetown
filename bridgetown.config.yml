@@ -1,0 +1,10 @@
+defaults:
+  - scope:
+      collection: "posts"
+    values:
+      layout: "post"
+kramdown:
+  smart_quotes: laquo,raquo,bdquo,ldquo
+picture:
+  output: "g"
+  ignore_missing_images: true
