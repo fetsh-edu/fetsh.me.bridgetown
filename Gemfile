@@ -42,4 +42,5 @@ group :bridgetown_plugins do
   gem "bridgetown_picture_tag", git: "https://github.com/seroperson/bridgetown_picture_tag.git"
 end
 
-gem "nokogiri", "~> 1.18"
+gem 'minitest', '~> 5.0'
+gem 'nokogiri', '~> 1.18'

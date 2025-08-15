@@ -216,6 +216,7 @@ PLATFORMS
 DEPENDENCIES
   bridgetown (~> 2.0.0.beta6)
   bridgetown_picture_tag!
+  minitest (~> 5.0)
   nokogiri (~> 1.18)
   puma (< 7)
   standalone_typograf!
