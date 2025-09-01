@@ -1,0 +1,16 @@
+
+<dl class="blog-meta">
+    <dt class="sr-only">Publication date</dt>
+    <dd class="date-meta">
+        <time datetime="<%= resource.date.iso8601 %>" itemprop="datePublished"><%= resource.date.strftime("%-d %b %Y") %></time>
+    </dd>
+
+    <% if (rt = resource.data["reading_time"]) %>
+    <dt class="sr-only">Estimated reading time</dt>
+    <dd class="time-meta"><%= rt %></dd>
+    <% end %>
+    <!--
+    <dt class="sr-only">Author</dt>
+    <dd class="author-meta">fetsh</dd>
+    -->
+</dl>

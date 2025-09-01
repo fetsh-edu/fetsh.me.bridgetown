@@ -2,11 +2,16 @@
 <html lang="<%= site.locale || 'en' %>">
 <head>
 <%= render "head", metadata: site.metadata, title: (data.title || "Index") %>
+<% if data[:hidden] %>
+  <meta name="robots" content="noindex,nofollow">
+<% end %>
 </head>
 <body class="<%= [data.layout, data.page_class].compact.join(' ') %>">
-<%= render "blobs", metadata: site.metadata %>
-
 <header>
+  <!-- <div class="blob blob--a"></div>
+  <div class="main-bleed" aria-hidden="true">
+      <div class="blob blob--b"></div>
+    </div> -->
   <h1>
     <a href="/">
       <img src="/logo.svg" alt="Company Logo">
@@ -18,7 +23,6 @@
 <main>
 <%= yield %>
 </main>
-
 <%= render "footer", metadata: site.metadata %>
 </body>
 </html>

@@ -50,6 +50,7 @@ module SoftHyphenizer
     return if lang.start_with?("he") || p["dir"].to_s.downcase == "rtl"
 
     p.children.each do |node|
+      Bridgetown.logger.info("Processing text node: #{node.inspect}")
       next unless node.text?
       next if skip_node?(node)
       process_text_node!(node)
@@ -57,14 +58,7 @@ module SoftHyphenizer
   end
 
   def each_target_paragraph(scope)
-    # Основной путь — CSS (быстро и читаемо)
-    return scope.css("article p, .prose p")
-  # rescue Nokogiri::XML::XPath::SyntaxError
-  #   # Фолбэк на XPath без неймспейсов
-  #   return scope.xpath(
-  #     "//*[local-name()='article']//p | " \
-  #     "//*[contains(concat(' ', normalize-space(@class), ' '), ' prose ')]//p"
-  #   )
+    return scope.css("article p, .prose p, article h2")
   end
 
   def process_html(html)
@@ -76,7 +70,6 @@ module SoftHyphenizer
       doc = Nokogiri::HTML5.fragment(html)
     end
 
-    # КРИТИЧЕСКОЕ: убрать любые неймспейсы, если внезапно появились
     doc.remove_namespaces! if doc.respond_to?(:remove_namespaces!)
 
     each_target_paragraph(doc).each { |p| process_paragraph!(p) }

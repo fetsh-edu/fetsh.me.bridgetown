@@ -1,0 +1,48 @@
+<div class="grid-overlay"></div>
+
+<style>
+/* Grid overlay styles using your CSS variables */
+.grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    background-image: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent calc(var(--base-line-height) - 1px),
+        rgba(237, 53, 93, 0.15) calc(var(--base-line-height) - 1px),
+        rgba(237, 53, 93, 0.15) var(--base-line-height)
+    );
+    opacity: 0.8;
+}
+body {
+    position: relative;
+}
+</style>
+<script>
+// Grid functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const grid = document.querySelector('.grid-overlay');
+
+    function updateGridHeight() {
+        const bodyHeight = document.body.scrollHeight;
+        grid.style.height = bodyHeight + 'px';
+    }
+
+    // Update grid height initially and when content changes
+    updateGridHeight();
+
+    // Update on window resize
+    window.addEventListener('resize', updateGridHeight);
+
+    // Optional: Use ResizeObserver to watch for content changes
+    if (window.ResizeObserver) {
+        const resizeObserver = new ResizeObserver(updateGridHeight);
+        resizeObserver.observe(document.body);
+    }
+});
+</script>

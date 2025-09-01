@@ -1,0 +1,6 @@
+pattern: "%{m} %{unit}"
+units:
+  one: "минута"
+  few: "минуты"
+  many: "минут"
+  other: "мин"

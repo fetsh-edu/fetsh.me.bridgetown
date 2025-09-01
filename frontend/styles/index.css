@@ -1,121 +1,8 @@
-/* ===== Source Serif 4 — Roman variable ===== */
-@font-face {
-    font-family: "Source Serif 4";
-    src: url("/fonts/source-serif-4/source-serif4-var-roman-latin.woff2")
-        format("woff2");
-    font-style: normal;
-    font-weight: 300 800;
-    font-display: swap;
-    font-stretch: 100%;
-    unicode-range:
-        U+0000-00FF, U+0100-024F, U+0259, U+1E00-1EFF, U+2000-206F, U+20A0-20CF,
-        U+2122;
-}
-
-@font-face {
-    font-family: "Source Serif 4";
-    src: url("/fonts/source-serif-4/source-serif4-var-roman-cyrillic.woff2")
-        format("woff2");
-    font-style: normal;
-    font-weight: 300 800;
-    font-display: swap;
-    font-stretch: 100%;
-    unicode-range:
-        U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F, U+2000-206F, U+20B4;
-}
-
-/* ===== Source Serif 4 — Italic variable ===== */
-@font-face {
-    font-family: "Source Serif 4";
-    src: url("/fonts/source-serif-4/source-serif4-var-italic-latin.woff2")
-        format("woff2");
-    font-style: italic;
-    font-weight: 300 800;
-    font-display: swap;
-    font-stretch: 100%;
-    unicode-range:
-        U+0000-00FF, U+0100-024F, U+0259, U+1E00-1EFF, U+2000-206F, U+20A0-20CF,
-        U+2122;
-}
-
-@font-face {
-    font-family: "Source Serif 4";
-    src: url("/fonts/source-serif-4/source-serif4-var-italic-cyrillic.woff2")
-        format("woff2");
-    font-style: italic;
-    font-weight: 300 800;
-    font-display: swap;
-    font-stretch: 100%;
-    unicode-range:
-        U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F, U+2000-206F, U+20B4;
-}
-
-/* Hebrew subset — грузится только для U+0590–05FF и т.п. */
-@font-face {
-    font-family: "Source Serif 4";
-    src: url("/fonts/noto-serif-hebrew/noto-serif-hebrew-var-he.woff2")
-        format("woff2");
-    font-style: normal;
-    font-weight: 300 800; /* или 400 700, если ограничили ось */
-    font-stretch: 100%;
-    font-display: swap;
-    unicode-range: U+0590-05FF, U+200C-200F, U+202A-202E, U+2066-2069, U+20AA;
-}
-/* ===== Rubik — Roman ===== */
-@font-face {
-    font-family: "Rubik";
-    src: url("/fonts/rubik/rubik-var-roman-latin.woff2") format("woff2");
-    font-style: normal;
-    font-weight: 300 900; /* фактический диапазон Rubik */
-    font-stretch: 100%;
-    font-display: swap;
-    unicode-range:
-        U+0000-00FF, U+0100-024F, U+0259, U+1E00-1EFF, U+2000-206F, U+20A0-20CF,
-        U+2122;
-}
-@font-face {
-    font-family: "Rubik";
-    src: url("/fonts/rubik/rubik-var-roman-cyrillic.woff2") format("woff2");
-    font-style: normal;
-    font-weight: 300 900;
-    font-stretch: 100%;
-    font-display: swap;
-    unicode-range:
-        U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F, U+2000-206F, U+20B4;
-}
-
-/* ===== Rubik — Italic (если используете курсив в UI/заголовках) ===== */
-@font-face {
-    font-family: "Rubik";
-    src: url("/fonts/rubik/rubik-var-italic-latin.woff2") format("woff2");
-    font-style: italic;
-    font-weight: 300 900;
-    font-stretch: 100%;
-    font-display: swap;
-    unicode-range:
-        U+0000-00FF, U+0100-024F, U+0259, U+1E00-1EFF, U+2000-206F, U+20A0-20CF,
-        U+2122;
-}
-@font-face {
-    font-family: "Rubik";
-    src: url("/fonts/rubik/rubik-var-italic-cyrillic.woff2") format("woff2");
-    font-style: italic;
-    font-weight: 300 900;
-    font-stretch: 100%;
-    font-display: swap;
-    unicode-range:
-        U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F, U+2000-206F, U+20B4;
-}
-@font-face {
-    font-family: "Rubik";
-    src: url("/fonts/rubik/rubik-var-roman-hebrew.woff2") format("woff2");
-    font-style: normal;
-    font-weight: 300 900;
-    font-stretch: 100%;
-    font-display: swap;
-    unicode-range: U+0590-05FF, U+200C-200F, U+202A-202E, U+2066-2069, U+20AA;
-}
-
+@import "./fonts.css";
+@import "./blobs.css";
+/* =========================
+   Variables
+   ========================= */
 :root {
     --sans-serif:
         "Rubik", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto",
@@ -126,36 +13,50 @@
         "Source Serif 4", "Charter", "Georgia", "Palatino", "Palatino Linotype",
         "Book Antiqua", "Minion Pro", "Iowan Old Style", "Sitka Text", serif;
     --primary-font: var(--serif);
-    --base-font-size: 16px;
+
+    --base-font-size: 17px;
+    --base-line-height: 28px; /* baseline step */
     --secondary-font-adjust: 0.52;
+
     --background: #fffff8;
     --background-10: #f0f0ea;
     --background-20: #e7e6de;
+
     --primary: #211618;
     --primary-10: #666666;
     --primary-20: #aaaaaa;
     --primary-25: #cccccc;
     --primary-30: #dddddd;
     --primary-40: #eeeeee;
+
     --accent-red: #ed355d;
     --accent-yellow: #ffe922;
     --accent-green: #5e8d58;
     --accent: var(--accent-red);
-    --ear: 1.6rem;
+
+    --ear: var(--base-line-height);
     --main-content-width: 41rem;
     --main-content-width-unbounded: 100%;
 }
+
+/* RTL Hebrew specifics */
 :lang(he) {
     font-family: var(--serif);
     direction: rtl;
-    unicode-bidi: isolate; /* защищает от “протекания” направления в смешанных участках */
+    unicode-bidi: isolate;
 }
 
+/* =========================
+   Base
+   ========================= */
 html {
     scroll-behavior: smooth;
     width: 100%;
+    min-height: 100%;
     font-size: var(--base-font-size);
+    line-height: var(--base-line-height); /* 1rlh = 28px */
 }
+
 body {
     font-family: var(--primary-font);
     font-optical-sizing: auto;
@@ -163,38 +64,98 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100dvh;
-    min-height: 100dvh;
-    margin: 0px;
-    padding: 0px;
+    height: auto;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
     background-color: var(--background);
-    text-rendering: optimizeSpeed;
-    line-height: 1.6;
+    /* avoid mixed text-rendering hints; engines ignore or vary */
 }
+
+@supports (min-height: 100svh) {
+    body {
+        min-height: 100svh;
+    }
+}
+
 main {
-    flex: 1;
+    flex: 1 1 auto;
+    position: relative;
 }
-/*article {
-    text-align: justify;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    overflow-wrap: anywhere;
-    word-break: normal;
-}*/
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+a {
+    color: var(--accent-green);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.24rem;
+    text-decoration-color: oklch(from currentColor l c h / 50%);
+}
+/* =========================
+   Baseline + Typographic defaults
+   ========================= */
+
+/* Line-height for text-bearing elements (no margins here) */
+:where(
+    p,
+    li,
+    dt,
+    dd,
+    blockquote,
+    pre,
+    table,
+    caption,
+    figcaption,
+    code,
+    kbd,
+    samp
+) {
+    line-height: 1rlh;
+}
+
+/* Headings: consistent, grid-safe line-height */
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.footnotes::before {
     font-family: var(--secondary-font);
     font-size-adjust: var(--secondary-font-adjust);
-    line-height: 1.15;
-    text-rendering: optimizeLegibility;
     text-align: start;
     text-wrap: balance;
     font-weight: 500;
 }
+
+/* Use integer multiples of the baseline for multi-line safety */
+h1,
+h2,
+h3 {
+    line-height: 2rlh;
+}
+h4,
+h5,
+h6 {
+    line-height: 1rlh;
+}
+
+/* Code sizing while keeping baseline */
+pre,
+code {
+    font-size: 0.95rem;
+}
+
+/* UI blocks that should not hyphenate automatically */
 .nav,
 .ui,
 code,
@@ -203,26 +164,117 @@ kbd,
 samp,
 table,
 caption,
-figcaption {
+figcaption,
+.footnotes {
     text-align: start;
     hyphens: manual;
     -webkit-hyphens: manual;
 }
+
+/* Images: block-level to avoid inline line-box artifacts */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================
+   Article content flow
+   ========================= */
+
+/* Spacing + width only on direct article children (prevents nested double margins) */
+article
+    > :where(
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        ul,
+        ol,
+        dl,
+        blockquote,
+        pre,
+        figure,
+        table,
+        hr,
+        .footnotes
+    ),
+footer > :where(p, ul),
+figure figcaption {
+    max-width: var(--main-content-width);
+    margin-inline: auto;
+    margin-block: 1rlh;
+}
+
+.footnotes::before {
+    content: "Footnotes:";
+    display: block;
+}
+
+/* Lists: control outer spacing on UL/OL, not on LI */
+li {
+    margin: 0;
+}
+
+figure figcaption {
+    margin-block: 0.5rlh 0;
+    color: var(--primary-10);
+    font-family: var(--secondary-font);
+    line-height: 0.8rlh;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/* Horizontal rule: 1px compensated to keep net advance = 1rlh */
+hr {
+    border: 0;
+    height: 0;
+    margin-block: calc(1rlh - 1px) 1rlh;
+    border-top: 1px solid var(--primary-30);
+}
+
+sup {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.4em;
+    font-size: 0.75em;
+    line-height: 0;
+}
+ul,
+ol {
+    padding-inline-start: 1rlh;
+}
+
+/* =========================
+   Header / Main layout (nested syntax)
+   ========================= */
 header {
-    padding: 0.5rem var(--ear);
+    box-sizing: border-box;
+    padding: 0.5rlh var(--ear);
+
     & h1 {
         font-weight: 300;
         font-size: 1.6rem;
+        line-height: 2rlh;
+        margin-block: 0.5rlh;
+
         & a {
             color: var(--primary);
+            -webkit-tap-highlight-color: transparent;
             text-decoration: none;
             display: flex;
             align-items: center;
+
             & img {
                 width: 3rem;
-                margin-right: 1rem;
+                margin-right: var(--ear);
+                margin-block: 0;
             }
         }
+
         & i {
             color: var(--accent);
             font-style: normal;
@@ -230,64 +282,126 @@ header {
         }
     }
 }
+
 main {
-    padding: 0.5rem var(--ear);
+    padding: 0.5rlh var(--ear);
+    overflow-x: clip;
+
     & h1 {
         font-weight: 500;
-        font-size: 2.4rem;
-        /*letter-spacing: -0.03em;*/
+        font-size: 3rem;
+        line-height: 1.5rlh;
+        margin-block: 2.5rlh 2rlh;
+        /* letter-spacing: -0.03em; */
     }
-    & p {
-        font-size: 1.15rem;
-        line-height: 1.5;
-        font-weight: 400;
-        & img {
-            max-width: 100%;
-            height: auto;
-        }
+
+    & h2 {
+        font-size: 2.3rem;
+        line-height: 1.5rlh;
+        margin-block: 2rlh 1rlh;
     }
-    & figure {
-        margin: 0;
-        & img {
-            max-width: 100%;
-            height: auto;
-        }
+
+    & h3,
+    .footnotes::before {
+        font-size: 1.8rem;
+        line-height: 1rlh;
+        margin-block: 2rlh 0rlh;
+    }
+
+    & h4 {
+        font-size: 1.4rem;
+        line-height: 1rlh;
+        margin-block: 1rlh 0.5rlh;
+    }
+
+    & h4 + p {
+        margin-top: 0;
+    }
+
+    & p,
+    & li {
+        font-size: 1.15rem; /* ≈18.4px body size */
+        font-weight: 400; /* baseline already set via :where(...) */
+    }
+
+    & figure img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    & p img {
+        max-width: 100%;
+        height: auto;
     }
 }
-article address,
-article blockquote,
-article div,
-article dl,
-article fieldset,
-article figure,
-article figcaption,
-article footer,
-article form,
-article h1,
-article h2,
-article h3,
-article h4,
-article h5,
-article h6,
-article header,
-article hgroup,
-article hr,
-article main,
-article nav,
-article ol,
-article p,
-article pre,
-article section,
-article table,
-article ul {
-    max-width: var(--main-content-width);
-    margin-inline: auto;
-}
+
+/* =========================
+   Media width variants
+   ========================= */
 article figure.unbounded,
 article img.unbounded {
     max-width: fit-content;
 }
+
 article figure.wide,
-article img.wide {
+article p:has(> img.wide) {
     max-width: calc(var(--main-content-width) + 200px);
+}
+
+.blog-meta {
+    display: flex;
+    gap: 1rlh;
+    align-items: center;
+    color: var(--primary-10);
+    font-family: var(--secondary-font);
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    margin-block-start: -1rlh;
+}
+
+.blog-meta dd {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+.blog-meta dd {
+    position: relative;
+}
+.blog-meta + p {
+    margin-block-start: 2rlh;
+}
+
+.time-meta::before {
+    content: "~";
+}
+
+.author-meta::before {
+    content: "by ";
+    position: absolute;
+    left: 0;
+    font-style: italic;
+}
+
+footer {
+    /*background-color: color-mix(in srgb, var(--accent-green) 50%, transparent);*/
+    position: relative;
+    flex-shrink: 0;
+    padding-inline: var(--ear);
+    padding-block: 2rlh;
+    font-family: var(--secondary-font);
+}
+
+/* =========================
+   Debug overlay
+   ========================= */
+body.debug-baseline {
+    background-image: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent calc(1rlh - 1px),
+        rgba(237, 53, 93, 0.25) calc(1rlh - 1px),
+        rgba(237, 53, 93, 0.25) 1rlh
+    );
+    background-size: 100% 1rlh;
 }

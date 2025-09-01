@@ -2,6 +2,7 @@
 layout: default
 ---
 <article lang="ru">
-  <h1><%= data.title %></h1>
+  <h1><%= raw(data.title) %></h1>
+  <%= render "post_meta" %>
   <%= yield %>
 </article>

@@ -1,0 +1,113 @@
+:root {
+    --blob-size-1: min(180vw, 1500px);
+    --blob-size-2: min(150vw, 1100px);
+    --blob-size-3: var(--blob-size-1);
+    --blob-size-4: var(--blob-size-2);
+    --blob-opacity-1: 0.2;
+    --blob-opacity-2: 0.2;
+    --blob-opacity-3: 0.6;
+}
+body {
+    background-color: var(--background, #fffff8);
+
+    /* Diameters & radii (re-using your sizes) */
+    --b1d: var(--blob-size-1);
+    --b1r: calc(var(--b1d) / 2);
+    --b2d: var(--blob-size-2);
+    --b2r: calc(var(--b2d) / 2);
+    --b3d: var(--blob-size-3);
+    --b3r: calc(var(--b3d) / 2);
+    --b4d: var(--blob-size-2);
+    --b4r: calc(var(--b4d) / 2);
+
+    --a1: calc(var(--blob-opacity-1) * 100%);
+    --a2: calc(var(--blob-opacity-2) * 100%);
+    --a3: calc(var(--blob-opacity-3) * 100%);
+
+    --b1-x: calc(100px);
+    --b1-y: calc(-20px);
+
+    --b2-x: min(100vw, 1300px);
+    --b2-y: calc(270px);
+
+    --b3-x: calc(80vw);
+    --b3-y: calc(100% + 200px);
+
+    --b4-x: 0px;
+    --b4-y: calc(100% - 200px);
+
+    /* Layered gradients (soft edges via color-mix; no DOM nodes) */
+    background-image:
+        radial-gradient(
+            circle var(--b1r) at var(--b1-x) var(--b1-y),
+            color-mix(in srgb, var(--accent-red) var(--a1), transparent) 0%,
+            color-mix(
+                    in srgb,
+                    var(--accent-red) calc(var(--a1) * 0.5),
+                    transparent
+                )
+                40%,
+            color-mix(
+                    in srgb,
+                    var(--accent-red) calc(var(--a1) * 0.2),
+                    transparent
+                )
+                70%,
+            transparent 100%
+        ),
+        radial-gradient(
+            circle var(--b2r) at var(--b2-x) var(--b2-y),
+            color-mix(in srgb, var(--accent-yellow) var(--a2), transparent) 0%,
+            color-mix(
+                    in srgb,
+                    var(--accent-yellow) calc(var(--a2) * 0.5),
+                    transparent
+                )
+                40%,
+            color-mix(
+                    in srgb,
+                    var(--accent-yellow) calc(var(--a2) * 0.2),
+                    transparent
+                )
+                70%,
+            transparent 100%
+        ),
+        radial-gradient(
+            circle var(--b3r) at var(--b3-x) var(--b3-y),
+            color-mix(in srgb, var(--accent-green) var(--a3), transparent) 0%,
+            color-mix(
+                    in srgb,
+                    var(--accent-green) calc(var(--a3) * 0.5),
+                    transparent
+                )
+                40%,
+            color-mix(
+                    in srgb,
+                    var(--accent-green) calc(var(--a3) * 0.2),
+                    transparent
+                )
+                70%,
+            transparent 100%
+        ),
+        radial-gradient(
+            circle var(--b4r) at var(--b4-x) var(--b4-y),
+            color-mix(in srgb, var(--accent-yellow) var(--a2), transparent) 0%,
+            color-mix(
+                    in srgb,
+                    var(--accent-yellow) calc(var(--a2) * 0.5),
+                    transparent
+                )
+                40%,
+            color-mix(
+                    in srgb,
+                    var(--accent-yellow) calc(var(--a2) * 0.2),
+                    transparent
+                )
+                70%,
+            transparent 100%
+        );
+
+    background-repeat: no-repeat;
+    /* Leave attachment as scroll for mobile perf; set to fixed if you want parallax */
+    background-attachment: scroll;
+}
