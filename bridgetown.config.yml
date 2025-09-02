@@ -4,7 +4,7 @@ defaults:
     values:
       layout: "post"
 kramdown:
-  smart_quotes: laquo,raquo,bdquo,ldquo
+  smart_quotes: lsquo,rsquo,bdquo,rdquo
 picture:
   output: "g"
   ignore_missing_images: true

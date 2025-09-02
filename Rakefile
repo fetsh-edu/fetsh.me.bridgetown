@@ -49,6 +49,14 @@ namespace :spec do
     t.verbose = true
   end
 
+  desc "Run ObsidianCallouts tests"
+  Rake::TestTask.new(:obsidian_callouts) do |t|
+    t.libs << 'test'
+    t.libs << 'plugins' # Assuming your plugin is in plugins/ directory
+    t.test_files = FileList['test/**/obsidian_callouts_test.rb']
+    t.verbose = true
+  end
+
   desc "Run all plugin tests"
   Rake::TestTask.new(:plugins) do |t|
     t.libs << 'test'

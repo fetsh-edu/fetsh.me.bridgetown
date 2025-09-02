@@ -1,0 +1,182 @@
+{
+  "main": {
+    "id": "fd19b10ee0d01741",
+    "type": "split",
+    "children": [
+      {
+        "id": "03be93e79ff2416d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "14ef8fcffa920a2c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/2024-04-28-adama-zuzu.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2024-04-28-adama-zuzu"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d45ce3180ba6476f",
+    "type": "split",
+    "children": [
+      {
+        "id": "d46f090cd006a457",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4b94030340a196cd",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "d5e74be9448ed03b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "6e3b3437610f16c0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "3bcd78189bc67246",
+    "type": "split",
+    "children": [
+      {
+        "id": "0f0444848bd95072",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "03c8048ea553f4ec",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "_posts/2024-04-28-adama-zuzu.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 2024-04-28-adama-zuzu"
+            }
+          },
+          {
+            "id": "c47ef21747523139",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "_posts/2024-04-28-adama-zuzu.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 2024-04-28-adama-zuzu"
+            }
+          },
+          {
+            "id": "7eb1906254a56f0c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "b5a09bdc6d377e47",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "_posts/2024-04-28-adama-zuzu.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 2024-04-28-adama-zuzu"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "14ef8fcffa920a2c",
+  "lastOpenFiles": [
+    "images/2024/adama-zuzu.jpg",
+    "_posts/2024-04-28-barefoot-shoes.md",
+    "_posts/2024-04-28-adama-zuzu.md",
+    "_posts/2023-08-22-barefoot.md",
+    "notes/Barefoot.md",
+    "notes",
+    "_posts/2024-05-05-60ml-sweat.md",
+    "_posts/2024-03-07-running-base.md"
+  ]
+}

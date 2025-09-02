@@ -50,7 +50,6 @@ module SoftHyphenizer
     return if lang.start_with?("he") || p["dir"].to_s.downcase == "rtl"
 
     p.children.each do |node|
-      Bridgetown.logger.info("Processing text node: #{node.inspect}")
       next unless node.text?
       next if skip_node?(node)
       process_text_node!(node)

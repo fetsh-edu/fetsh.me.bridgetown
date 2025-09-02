@@ -1,5 +1,6 @@
 @import "./fonts.css";
 @import "./blobs.css";
+@import "./callouts.css";
 /* =========================
    Variables
    ========================= */
@@ -69,7 +70,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--background);
-    /* avoid mixed text-rendering hints; engines ignore or vary */
 }
 
 @supports (min-height: 100svh) {
@@ -117,7 +117,8 @@ a {
     figcaption,
     code,
     kbd,
-    samp
+    samp,
+    aside
 ) {
     line-height: 1rlh;
 }
@@ -209,6 +210,30 @@ figure figcaption {
     margin-block: 1rlh;
 }
 
+article > aside {
+    max-width: calc(var(--main-content-width) + 2 * var(--ear));
+    padding: 0 var(--ear);
+    margin-inline: auto;
+    margin-block: 1rlh;
+    min-width: 0;
+    & h4 {
+        margin: 0;
+    }
+    & p {
+        margin-inline: auto;
+        margin-block: 1rlh;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Higher than your current 1284px */
+    article aside {
+        margin-inline: calc(-1 * var(--ear));
+        max-width: 100vw;
+        border-radius: 0 !important;
+    }
+}
+
 .footnotes::before {
     content: "Footnotes:";
     display: block;
@@ -226,14 +251,21 @@ figure figcaption {
     line-height: 0.8rlh;
     font-size: 1rem;
     font-weight: 300;
+    & p {
+        margin: 0;
+        line-height: inherit;
+        font-size: inherit;
+        margin-block: inherit;
+    }
 }
 
 /* Horizontal rule: 1px compensated to keep net advance = 1rlh */
 hr {
+    width: 80%;
     border: 0;
     height: 0;
     margin-block: calc(1rlh - 1px) 1rlh;
-    border-top: 1px solid var(--primary-30);
+    border-top: 1px solid oklch(from currentColor l c h / 20%);
 }
 
 sup {
@@ -332,6 +364,10 @@ main {
     & p img {
         max-width: 100%;
         height: auto;
+    }
+    & a {
+        word-break: break-word;
+        overflow-wrap: anywhere;
     }
 }
 
