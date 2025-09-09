@@ -301,6 +301,31 @@ main {
     padding: 0.5rlh var(--ear);
     overflow-x: clip;
 
+    & article {
+        & :where(h1, h2, h3, h4, h5, h6) {
+            display: flex;
+            align-items: baseline;
+            gap: 0;
+            & > a {
+                order: 2;
+                text-decoration: none;
+                opacity: 0;
+                transition: opacity 0.2s;
+                &::after {
+                    content: "#";
+                    font-size: 0.85em;
+                    margin-left: 0.25em;
+                    color: oklch(from currentColor l c h / 70%);
+                }
+            }
+            &:hover {
+                & > a {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
     & h1 {
         font-weight: 500;
         font-size: 3rem;

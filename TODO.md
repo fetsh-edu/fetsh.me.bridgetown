@@ -1,10 +1,11 @@
-- https://teletype.in/@sloths.run
-- anchors near headers
+[ ] https://teletype.in/@sloths.run
+[ ] integration of fetsh.me/run
+[ ] navigation in footer
+[ ] rss
+[ ] related articles
+[ ] home page = about page
+
 - TOC
-- related articles
-- navigation in footer
-- integration of fetsh.me/run
-- home page = about page
 - now page
 - music listening history
 - podcast listening history
@@ -16,5 +17,6 @@
 
 ===
 
+[x] anchors near headers
 [x] external links markers
 [x] runners <HR>

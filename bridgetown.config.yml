@@ -5,6 +5,7 @@ defaults:
       layout: "post"
 kramdown:
   smart_quotes: lsquo,rsquo,bdquo,rdquo
+  header_links: true
 picture:
   output: "g"
   ignore_missing_images: true
