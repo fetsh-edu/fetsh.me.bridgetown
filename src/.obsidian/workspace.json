@@ -13,12 +13,22 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2024-04-28-adama-zuzu.md",
+                "file": "_posts/2024-01-29-knees-running.md",
                 "mode": "source",
-                "source": false
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
               },
               "icon": "lucide-file",
-              "title": "2024-04-28-adama-zuzu"
+              "title": "2024-01-29-knees-running"
             }
           }
         ]
@@ -94,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2024-04-28-adama-zuzu.md",
+                "file": "_posts/2024-01-29-knees-running.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +114,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2024-04-28-adama-zuzu"
+              "title": "Backlinks for 2024-01-29-knees-running"
             }
           },
           {
@@ -113,12 +123,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2024-04-28-adama-zuzu.md",
+                "file": "_posts/2024-01-29-knees-running.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 2024-04-28-adama-zuzu"
+              "title": "Outgoing links from 2024-01-29-knees-running"
             }
           },
           {
@@ -142,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2024-04-28-adama-zuzu.md",
+                "file": "_posts/2024-01-29-knees-running.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2024-04-28-adama-zuzu"
+              "title": "Outline of 2024-01-29-knees-running"
             }
           }
         ]
@@ -170,13 +180,32 @@
   },
   "active": "14ef8fcffa920a2c",
   "lastOpenFiles": [
-    "images/2024/adama-zuzu.jpg",
+    "images/runners_hr.svg",
+    "images/runners.svg",
+    "_posts/2023-08-24-shoe-insert-test.md",
+    "_posts/2024-01-29-knees-running.md",
+    "_posts/2024-04-23-insoles.md",
+    "images/2023/Insert-Zuzu.jpg",
+    "images/2023/Insert-Vivo.jpg",
+    "images/2023/Insert-Rider.jpg",
+    "images/2023/Insert-Pegasus.jpg",
+    "images/2023/Insert-Kinvara.jpg",
+    "images/2023/Insert-Kinvara-2.jpg",
+    "images/2023/Insert-Hurricane.jpg",
+    "images/2023/Insert-Evoride.jpg",
+    "images/2023/Insert-Altra.jpg",
+    "_posts/2023-08-24-jay-dicharry-anatomy-for-runners.md",
+    "_books/2023-08-24-jay-dicharry-anatomy-for-runners.md",
+    "notes/Shoe insert test.md",
+    "notes",
+    "_books",
+    "_posts/2025-08-26-rocketscienze-fail.md",
+    "_posts/2024-05-05-60ml-sweat.md",
     "_posts/2024-04-28-barefoot-shoes.md",
     "_posts/2024-04-28-adama-zuzu.md",
+    "_posts/2024-03-07-running-base.md",
     "_posts/2023-08-22-barefoot.md",
-    "notes/Barefoot.md",
-    "notes",
-    "_posts/2024-05-05-60ml-sweat.md",
-    "_posts/2024-03-07-running-base.md"
+    "images/2023",
+    "notes/Barefoot.md"
   ]
 }

@@ -5,7 +5,7 @@ date: 2024-04-28 17:43:36
 tags:
   - barefoot
   - shoes
-image: images/2024/zuzu-run-1.jpg
+image: /images/2024/zuzu-run-1.jpg
 lang: ru
 ---
 

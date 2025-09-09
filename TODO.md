@@ -1,0 +1,17 @@
+- anchors near headers
+- external links markers
+- TOC
+- runners <HR>
+- related articles
+- navigation in footer
+- integration of fetsh.me/run
+- home page = about page
+- now page
+- music listening history
+- podcast listening history
+- books
+- tv-shows
+- https://teletype.in/@sloths.run
+- view counter
+- reactions (likes)
+- guestbook

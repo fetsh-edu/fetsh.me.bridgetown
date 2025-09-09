@@ -1,13 +1,13 @@
 ---
-title:  "База про бег"
-date:   2024-03-07 14:00
+title: База про бег
+date: 2024-03-07 14:00
 tags:
   - biochemistry
   - running:base
   - metabolism
   - zones
-image: images/2024/lactate-curve-lt1-lt2.png
-imageAlt: "Metabolism diagram"
+image: /images/2024/lactate-curve-lt1-lt2.png
+imageAlt: Metabolism diagram
 lang: ru
 ---
 
