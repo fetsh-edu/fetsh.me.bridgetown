@@ -1,9 +1,11 @@
 [ ] https://teletype.in/@sloths.run
 [ ] integration of fetsh.me/run
+[ ] home page = about page
 [ ] navigation in footer
 [ ] rss
 [ ] related articles
-[ ] home page = about page
+[ ] favicons
+[ ] meta social tags
 
 - TOC
 - now page

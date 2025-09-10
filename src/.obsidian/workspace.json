@@ -24,7 +24,7 @@
                   "showSearch": false,
                   "searchQuery": "",
                   "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
+                  "unlinkedCollapsed": false
                 }
               },
               "icon": "lucide-file",

@@ -245,6 +245,7 @@ hr {
     -webkit-mask-position: center;
     mask-position: center;
     -webkit-mask-size: auto 100%; /* keep aspect ratio, match element height */
+    mask-size: auto 100%;
 }
 
 sup {
@@ -303,11 +304,7 @@ main {
 
     & article {
         & :where(h1, h2, h3, h4, h5, h6) {
-            display: flex;
-            align-items: baseline;
-            gap: 0;
             & > a {
-                order: 2;
                 text-decoration: none;
                 opacity: 0;
                 transition: opacity 0.2s;
